@@ -9,6 +9,9 @@ import { HomeComponent } from './routes/home/home.component';
 import { LoginComponent } from './routes/login/login.component';
 import { CardComponent } from './component/card/card.component';
 import { Page404Component } from './routes/page404/page404.component';
+import { FormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import { RegisterComponent } from './routes/register/register.component'
 
 @NgModule({
   declarations: [
@@ -18,11 +21,15 @@ import { Page404Component } from './routes/page404/page404.component';
     HomeComponent,
     LoginComponent,
     CardComponent,
-    Page404Component
+    Page404Component,
+    RegisterComponent
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

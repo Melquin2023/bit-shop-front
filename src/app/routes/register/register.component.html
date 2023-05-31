@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="row">
+      <div class="col">
+    <!-- importar el ngForm -->
+        <form #userFrom="ngForm" (ngSubmit)="createUser(userFrom)">
+          <div class="d-flex flex-column gap-3">
+            <div class="d-flex justify-content-center">
+              <h1>Sign up</h1>
+            </div>
+            <div class="d-flex flex-column flex-sm-row gap-3">
+              <input name="name" #name="ngModel" [(ngModel)]="userService.userToCreate.name" type="text" placeholder="Name" />
+              <input name="lastName" #lastName="ngModel" [(ngModel)]="userService.userToCreate.lastName"type="text" placeholder="Last Name" />
+            </div>
+            <div class="d-flex gap-3 flex-column flex-md-row">
+              <input name="username" #username="ngModel" [(ngModel)]="userService.userToCreate.username" class="icon" type="text" placeholder=" Username" />
+              <input name="address" #address="ngModel" [(ngModel)]="userService.userToCreate.address" class="icon" type="text" placeholder=" Address" />
+              <input name="email" #email="ngModel" [(ngModel)]="userService.userToCreate.email" class="icon" type="text" placeholder=" Email" />
+              <input name="password" #password="ngModel" [(ngModel)]="userService.userToCreate.password" type="password" placeholder="Password" />
+            </div>
+            <div class="d-flex gap-3 flex-column flex-md-row">
+              <div class="flex-grow-2">
+                <input name="id" #id="ngModel" [(ngModel)]="userService.userToCreate.id" type="text" placeholder="Id" />
+              </div>
+              <div class="flex-grow-1">
+                <input name="dateBirth" #dateBirth="ngModel" [(ngModel)]="userService.userToCreate.dateBirth" type="date" placeholder="Date Birth" />
+              </div>
+              <div class="flex-grow-1">
+                <input name="phoneNumber" #phoneNumber="ngModel" [(ngModel)]="userService.userToCreate.phoneNumber" class="icon" type="text" placeholder="Phone" />
+              </div>
+            </div>
+            <div class="d-flex flex-column flex-sm-row gap-3">
+              <select class="" name="role" #role="ngModel" [(ngModel)]="userService.userToCreate.role">
+                <option selected>Role</option>
+                <option value="1">Administrador</option>
+                <option value="2">Subscriptor</option>
+                <option value="3">Cliente</option>
+              </select>
+              <select class="" name="paymentMethods" #paymentMethods="ngModel" [(ngModel)]="userService.userToCreate.paymentMethods">
+                <option selected> Payment Methods</option>
+                <option value="1">Credit Card</option>
+                <option value="2">Debit Card</option>
+                <option value="3">Transfer</option>
+              </select>
+            </div>
+            <button class="text-info rounded-5" type="submit">
+              <i class="fa-solid fa-paper-plane pe-1"></i> Send
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  
+  
