@@ -51,5 +51,29 @@
     </div>
   </div>
 
-  
+
+
+  <table class="table m-4 shadow-lg">
+    <thead class="datos table-primary">
+      <tr>
+        <th scope="col">_id</th>
+        <th scope="col">Username </th>
+        <th scope="col">id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col" colspan="2">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of userService.allUser">
+        <td >{{user._id}}</td>
+        <td >{{user.username}}</td>
+        <td >{{user.id}}</td>
+        <td >{{user.name}}</td>
+        <td >{{user.lastName}}</td>
+        <td> <a class="btn btn-danger" (click)="deleteUser(user._id ||'')">Eliminar</a></td>
+        <td><a class="btn btn-warning">Actualizar</a> </td>
+      </tr>
+    </tbody>
+  </table>
   
